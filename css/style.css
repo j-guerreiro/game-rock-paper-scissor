@@ -20,6 +20,10 @@ body {
   border-radius: 15px;
 }
 
+.titulo-jogo h1 {
+  font-size: 18px;
+}
+
 .janela-jogo {
   padding: 10px;
   background: darkseagreen;
@@ -33,9 +37,18 @@ body {
   border: 2px solid gainsboro;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .janela-jogo {
     width: 50%;
+  }
+
+  .titulo-jogo h1 {
+    font-size: 30px;
+  }
+
+  .painel button {
+    /* Important to override global */
+    margin: 0 15px !important;
   }
 }
 
@@ -59,7 +72,7 @@ footer {
   font-weight: bold;
   cursor: pointer;
   height: 40px;
-  margin: 0 10px;
+  margin: 0 3px;
   width: 100px;
   border-radius: 15px;
   border: none;
@@ -67,4 +80,11 @@ footer {
 
 .painel button:hover {
   box-shadow: 1px 1px 1px 1px greenyellow;
+}
+
+footer h4 a {
+  color: wheat;
+  padding: 5px;
+  background: #2a2b27;
+  border-radius: 5px;
 }
