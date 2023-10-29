@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Pixelify+Sans:wght@400;500&family=Roboto+Mono&display=swap');
+
+* {
+  font-family: 'Orbitron', sans-serif;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  /* Image by Chen https://pixabay.com/users/chenspec-7784448 */
+  background-image: url('/assets/lollipop-5979088_1920.jpg');
+}
+
+.titulo-jogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  background: cornsilk;
+  border-radius: 15px;
+}
+
+.janela-jogo {
+  padding: 10px;
+  background: darkseagreen;
+  border-radius: 15px;
+  padding: 10px;
+  background: darkseagreen;
+  border-radius: 15px;
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid gainsboro;
+}
+
+@media screen and (min-width: 768px) {
+  .janela-jogo {
+    width: 50%;
+  }
+}
+
+.placar,
+.painel,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placar {
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: #222222;
+  color: springgreen;
+  border-radius: 5px;
+}
+
+.painel button {
+  font-weight: bold;
+  cursor: pointer;
+  height: 40px;
+  margin: 0 10px;
+  width: 100px;
+  border-radius: 15px;
+  border: none;
+}
+
+.painel button:hover {
+  box-shadow: 1px 1px 1px 1px greenyellow;
+}
