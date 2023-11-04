@@ -1,12 +1,15 @@
-// Placar
+/**
+ * Seleção dos elementos do DOM.
+ */
 let placarHumano = document.getElementById('humano');
 let placarComputador = document.getElementById('computador');
+let resultado = document.getElementById('resultado');
 
+/**
+ * Insere no array o conteúdo de texto 
+ * de cada botão do painel do jogador.
+ */
 let btns = document.querySelectorAll('button');
-let opcaoHumano;
-
-let valoresPlacar = document.querySelectorAll('placar');
-
 let btnsTextArray = [];
 
 btns.forEach(function (btn) {
@@ -14,26 +17,37 @@ btns.forEach(function (btn) {
 });
 
 /**
- * 
- * @param {*} array 
- * @returns 
+ * Calculado o resultado do embate 
+ * Humano Vs Computador.
  */
-function randomizeMyArray(array) {
-  let randomIndex = Math.floor(Math.random() * 2)
-  let shuffledArray = [];
-
-  for (let index = 0; index < array.length; index++) {
-    shuffledArray.push(array[randomIndex]);
+function calculaPlacar(humano, computador) {
+  if (humano === computador) {
+    return 'Empate!';
   }
-
-  return shuffledArray;
 }
 
-let shuffledTextArray = [];
-shuffledTextArray = randomizeMyArray(btnsTextArray);
-console.log(shuffledTextArray);
+/**
+ * Atribui um índice aleatório ao array 
+ * como opção para o computador.
+ */
+function randomizeMyArray(array) {
+  let arrayLength = array.length;
+  let cpuOption;
 
-// Iterate over the selected buttons and attach the event listener
+  for (let index = 0; index < arrayLength; index++) {
+    let randomIndex = Math.floor(Math.random() * arrayLength);
+    cpuOption = array[randomIndex];
+  }
+
+  return cpuOption;
+}
+
+/**
+ * Itera sobre os botões do jogador e anexa o 
+ * event listener em cada um.
+ */
+let opcaoHumano;
+
 btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
 
@@ -41,17 +55,22 @@ btns.forEach(function (btn) {
       case 'pedra':
         opcaoHumano = btn.textContent;
         placarHumano.textContent = opcaoHumano;
+        placarComputador.textContent = randomizeMyArray(btnsTextArray);
+        resultado.textContent = calculaPlacar(placarHumano.textContent, placarComputador.textContent);
         break;
 
       case 'papel':
         opcaoHumano = btn.textContent;
         placarHumano.textContent = opcaoHumano;
-
+        placarComputador.textContent = randomizeMyArray(btnsTextArray);
+        resultado.textContent = calculaPlacar(placarHumano.textContent, placarComputador.textContent);
         break;
 
       case 'tesoura':
         opcaoHumano = btn.textContent;
         placarHumano.textContent = opcaoHumano;
+        placarComputador.textContent = randomizeMyArray(btnsTextArray);
+        resultado.textContent = calculaPlacar(placarHumano.textContent, placarComputador.textContent);
 
         break;
 
