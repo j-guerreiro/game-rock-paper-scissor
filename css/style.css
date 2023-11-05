@@ -24,7 +24,9 @@ body {
   font-size: 18px;
 }
 
-.janela-jogo {
+.janela-jogo,
+.regras-do-jogo,
+.container-reset {
   padding: 10px;
   background: darkseagreen;
   border-radius: 15px;
@@ -38,8 +40,11 @@ body {
 }
 
 @media (min-width: 768px) {
-  .janela-jogo {
-    width: 50%;
+
+  .janela-jogo,
+  .regras-do-jogo,
+  .container-reset {
+    width: 50% !important;
   }
 
   .titulo-jogo h1 {
@@ -82,9 +87,34 @@ footer {
   box-shadow: 1px 1px 1px 1px greenyellow;
 }
 
-footer h4 a {
+footer h4 a,
+.container-reset a {
   color: wheat;
   padding: 5px;
   background: #2a2b27;
   border-radius: 5px;
+  font-weight: normal;
+}
+
+.regras-do-jogo,
+.container-reset {
+  margin-top: 8px;
+}
+
+.regras-do-jogo h4 {
+  text-align: center;
+  background: cornsilk;
+  border-radius: 15px;
+}
+
+.regras-do-jogo ol {
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: #222222;
+  color: springgreen;
+  border-radius: 5px;
+}
+
+.container-reset a {
+  text-decoration: none;
 }
