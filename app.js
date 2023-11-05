@@ -17,7 +17,7 @@ btns.forEach(function (btn) {
 });
 
 /**
- * Calculado o resultado do embate 
+ * Calcula o resultado do embate 
  * Humano Vs Computador.
  */
 function calculaPlacar(humano, computador) {
@@ -26,7 +26,7 @@ function calculaPlacar(humano, computador) {
   }
 
   if (humano.includes('Tesoura')) {
-    humano = humano.substring(0,6).trim();
+    humano = humano.substring(0,7).trim();
   } 
   
   // Filtra textContent para remover o emoji
@@ -71,6 +71,7 @@ function calculaPlacar(humano, computador) {
     return 'Jogador venceu!';
   }
 }
+
 /**
  * Atribui um índice aleatório ao array 
  * como opção para o computador.
@@ -116,7 +117,6 @@ btns.forEach(function (btn) {
         placarHumano.textContent = opcaoHumano;
         placarComputador.textContent = randomizeMyArray(btnsTextArray);
         resultado.textContent = calculaPlacar(placarHumano.textContent, placarComputador.textContent);
-
         break;
 
       default:
