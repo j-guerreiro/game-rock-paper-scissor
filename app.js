@@ -4,6 +4,7 @@
 let placarHumano = document.getElementById('humano');
 let placarComputador = document.getElementById('computador');
 let resultado = document.getElementById('resultado');
+let tituloResultado = document.getElementById('titulo-resultado');
 
 /**
  * Insere no array o conteúdo de texto 
@@ -96,6 +97,7 @@ let opcaoHumano;
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
+    resultado.classList.add('.animacao-placar');
 
     switch (btn.id) {
       case 'pedra':
@@ -124,3 +126,18 @@ btns.forEach(function (btn) {
     }
   });
 });
+
+
+/**
+ * Animacao do placar.
+ */
+document.addEventListener("click", function (e) {
+  tituloResultado.classList.add('animacao-placar');
+
+  // Remove a classe após 1.5s
+  setTimeout(() => {
+    tituloResultado.classList.remove('animacao-placar');
+  }, 1500);
+});
+
+

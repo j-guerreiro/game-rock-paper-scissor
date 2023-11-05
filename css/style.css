@@ -118,3 +118,37 @@ footer h4 a,
 .container-reset a {
   text-decoration: none;
 }
+
+/* Animations */
+.placar h2,
+.painel button {
+  animation: 1s ease-out 0s 1 slideInLeft;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animacao-placar {
+  color: gold;
+  text-transform: uppercase;
+  border: 5px solid goldenrod;
+  transition: border-width 0.3s linear;
+  padding: 5px;
+}
+
+@keyframes animaPlacar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
