@@ -24,8 +24,53 @@ function calculaPlacar(humano, computador) {
   if (humano === computador) {
     return 'Empate!';
   }
-}
 
+  if (humano.includes('Tesoura')) {
+    humano = humano.substring(0,6).trim();
+  } 
+  
+  // Filtra textContent para remover o emoji
+  if (computador.includes('Tesoura')) {
+    computador = computador.substring(0,7).trim();
+  }
+ 
+  if (computador.includes('Papel') || computador.includes('Pedra')) {
+    computador = computador.substring(0,5).trim();
+  }
+
+  if (humano.includes('Papel') || humano.includes('Pedra')) {
+    humano = humano.substring(0,5).trim();
+  }
+
+  // Checagem de placar
+  if (humano.includes('Pedra') && computador.includes('Tesoura')) {
+    return 'Jogador venceu!';
+  }
+
+  if (computador.includes('Pedra') && humano.includes('Papel')) {
+    return 'Jogador venceu!';
+  }
+
+  if (computador.includes('Pedra') && humano.includes('Tesoura')) {
+    return 'Computador venceu!';
+  }
+
+  if (humano.includes('Papel') && computador.includes('Tesoura')) {
+    return 'Computador venceu!';
+  }
+
+  if (computador.includes('Tesoura') && humano.includes('Papel')) {
+    return 'Computador venceu!';
+  }
+  
+  if (humano.includes('Pedra') && computador.includes('Papel')) {
+    return 'Computador venceu!';
+  }
+
+  if (humano.includes('Tesoura') && computador.includes('Papel')) {
+    return 'Jogador venceu!';
+  }
+}
 /**
  * Atribui um índice aleatório ao array 
  * como opção para o computador.

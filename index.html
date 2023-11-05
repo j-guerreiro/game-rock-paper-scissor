@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <title>Jogo | Pedra Papel Tesousa</title>
 </head>
+
 <body>
 
   <div class="janela-jogo">
@@ -21,7 +23,7 @@
       <h2>👤 Jogador: <span id="humano"></span></h2>
       <h2>🏆 Vencedor: <span id="resultado"></span></h2>
     </div>
-  
+
     <hr>
     <h3>Escolha uma opção:</h3>
     <div class="painel">
@@ -31,14 +33,28 @@
     </div>
   </div>
 
+  <div class="container-reset">
+    <a class="botao-reset" href="/">Reiniciar partida</a>
+  </div>
+
+  <div class="regras-do-jogo">
+    <h4>Regras do Jogo</h4>
+    <ol>
+      <li>Pedra vence Tesoura: A pedra quebra a tesoura.</li>
+      <li>Tesoura vence Papel: A tesoura corta o papel.</li>
+      <li>Papel vence Pedra: O papel cobre a pedra.</li>
+    </ol>
+  </div>
   <script src="./app.js"></script>
 
   <footer>
     <div>
-      <h4><a target="_blank" href="https://github.com/j-guerreiro/game-rock-paper-scissor">github repo</h4></p>
+      <h4><a target="_blank" href="https://github.com/j-guerreiro/game-rock-paper-scissor">github repo</h4>
+      </p>
       <!-- <a href="https://www.flaticon.com/free-icons/joystick" title="joystick icons">Joystick icons created by Smashicons - Flaticon</a> -->
 
     </div>
   </footer>
 </body>
+
 </html>
