@@ -6,6 +6,8 @@ let placarComputador = document.getElementById('computador');
 let resultado = document.getElementById('resultado');
 let tituloResultado = document.getElementById('titulo-resultado');
 let btns = document.querySelectorAll('button');
+let scoreIdHumano = document.getElementById('score-humano');
+let scoreIdComputador = document.getElementById('score-computador');
 
 /**
  * Insere no array o conteúdo de texto 
@@ -116,6 +118,27 @@ function randomizeMyArray(array) {
 }
 
 /**
+ * Recebe o resultado do embate como parâmetro
+ * e retorna a contagem de pontos.
+ */
+function calculaScore(resultado) {
+  let scoreHumano = 0;
+  let scoreComputador = 0;
+
+  if (resultado === 'Computador venceu!') {
+    scoreComputador = parseInt(scoreIdComputador.textContent);
+    scoreComputador += 1;
+    scoreIdComputador.textContent = scoreComputador;
+  }
+  
+  if (resultado === 'Jogador venceu!') {
+    scoreHumano = parseInt(scoreIdHumano.textContent);
+    scoreHumano += 1;
+    scoreIdHumano.textContent = scoreHumano;
+  }
+}
+
+/**
  * Itera sobre os botões do jogador e anexa o 
  * event listener em cada um.
  */
@@ -131,6 +154,8 @@ btns.forEach(function (btn) {
         placarHumano.textContent = opcaoHumano;
         placarComputador.textContent = randomizeMyArray(pushButtonText(btns));
         resultado.textContent = calculaPlacar(placarHumano.textContent, placarComputador.textContent);
+
+        calculaScore(resultado.textContent);
         break;
 
       case 'papel':
@@ -138,6 +163,8 @@ btns.forEach(function (btn) {
         placarHumano.textContent = opcaoHumano;
         placarComputador.textContent = randomizeMyArray(pushButtonText(btns));
         resultado.textContent = calculaPlacar(placarHumano.textContent, placarComputador.textContent);
+
+        calculaScore(resultado.textContent);
         break;
 
       case 'tesoura':
@@ -145,6 +172,8 @@ btns.forEach(function (btn) {
         placarHumano.textContent = opcaoHumano;
         placarComputador.textContent = randomizeMyArray(pushButtonText(btns));
         resultado.textContent = calculaPlacar(placarHumano.textContent, placarComputador.textContent);
+
+        calculaScore(resultado.textContent);
         break;
 
       default:
